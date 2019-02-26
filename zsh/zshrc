@@ -127,8 +127,8 @@ zplug "peco/peco", \
 zplug "tstack/lnav", \
     as:command, \
     from:gh-r, \
-    use:"*os-x*" # TODO: This needs to adapt for non OSX.
-
+    use:"*os*x*", \
+    frozen:1
 
 
 ##########################################################################################
@@ -142,6 +142,3 @@ if ! zplug check --verbose; then
 fi
 
 zplug load #--verbose
-
-
-
