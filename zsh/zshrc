@@ -1,0 +1,146 @@
+##########################################################################################
+# PRE CONFIGURATION
+
+# Load zplug
+source ~/.zplug/init.zsh
+
+# Automatically do cd when a path is entered.
+# Usage:
+#   /home<enter> = cd /home<enter>
+setopt autocd
+
+
+##########################################################################################
+# PACKAGES
+
+# Artisan specifics.
+zplug "~/.artisan/zsh/includes", from:local, defer:3
+
+# Fish-like fast/unobtrusive autosuggestions for zsh.
+zplug "zsh-users/zsh-autosuggestions"
+
+# Additional completion definitions for Zsh.
+zplug "zsh-users/zsh-completions"
+
+# Syntax Highlighting
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Calculator
+# Usage:
+#   calc 10+10
+zplug "arzzen/calc.plugin.zsh"
+
+# Long history is long.
+#
+# Usage: 
+#   ctrl-r (with fzf!)
+zplug "lib/history", from:oh-my-zsh
+
+# Completion improvements.
+zplug "lib/completion", from:oh-my-zsh
+
+# Adds coloring for ls among other things, the PS1 is overridden by us.
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+
+# clipcopy - Copy data to clipboard
+#
+# Usage:
+#  <command> | clipcopy    - copies stdin to clipboard
+#  clipcopy <file>         - copies a file's contents to clipboard
+zplug "lib/clipboard", from:oh-my-zsh
+
+# nmap plugin - adds some useful aliases that are easy to remember.
+#
+# Usage:
+#   nmap_<tab>
+zplug "plugins/nmap", from:oh-my-zsh
+
+# Colored Man Pages, as simple as that!
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+
+# z - jump around.
+# Tracks your most used directories, based on 'frecency', train it and use it!
+# 
+# Usage:
+#   z foo bar
+zplug "plugins/z", from:oh-my-zsh
+
+# Auto-close and delete matching delimiters in zsh.
+zplug "hlissner/zsh-autopair"
+
+# Theme 
+GEOMETRY_HOSTNAME_HIDE_ON=""
+zplug "jedahan/geometry", at:mnml, as:theme
+
+# TODO: VIM
+export EDITOR="vim"
+# TODO: TMUX
+# TODO: lnav
+
+
+# nnn - tiny, lighting fast, feature-packed file manger (HELPERS)
+#
+# Usage:
+#   n
+#   Press ? for help. hjkl for navigation. CTRL-G to exit and cd to directory.
+zplug "jarun/nnn", use:"scripts/quitcd/*.zsh"
+zplug "jarun/nnn", use:"scripts/auto-completion/*.zsh"
+
+##########################################################################################
+# BINARIES
+
+# fzf - fuzzy searcher
+# 
+# Usage: 
+#   fzf, ctrl-t, vim, etc.
+zplug "junegunn/fzf-bin", \
+    from:gh-r, \
+    as:command, \
+    rename-to:fzf, \
+    use:"*darwin*amd64*" # TODO: This needs to adapt for non OSX.
+zplug "junegunn/fzf", use:"shell/*.zsh"
+
+# ag - code search tool
+#
+# Usage:
+#   ag, vim, etc.
+zplug "monochromegane/the_platinum_searcher", \
+    as:command, \
+    from:gh-r, \
+    rename-to:"ag", \
+    frozen:1
+
+# peco - simplistic interactive filtering tool
+#
+# Usage:
+#   ps aux | peco
+zplug "peco/peco", \
+    as:command, \
+    from:gh-r, \
+    frozen:1
+
+# lnav - log navigator
+#
+# Usage:
+#   lnav
+zplug "tstack/lnav", \
+    as:command, \
+    from:gh-r, \
+    use:"*os-x*" # TODO: This needs to adapt for non OSX.
+
+
+
+##########################################################################################
+# Install packages that have not been installed yet
+
+if ! zplug check --verbose; then
+    printf "Install? [y/n]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load #--verbose
+
+
+

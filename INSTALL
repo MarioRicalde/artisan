@@ -1,0 +1,5 @@
+#!/bin/bash
+
+brew install zplug tree nnn zsh highlight
+mv -v ~/.zshrc ~/.zshrc.pre-artisan 2> /dev/null
+ln -sf ~/.artisan/zsh/zshrc ~/.zshrc
