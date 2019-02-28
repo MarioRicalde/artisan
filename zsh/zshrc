@@ -69,12 +69,6 @@ zplug "hlissner/zsh-autopair"
 GEOMETRY_HOSTNAME_HIDE_ON=""
 zplug "jedahan/geometry", at:mnml, as:theme
 
-# TODO: VIM
-export EDITOR="vim"
-# TODO: TMUX
-# TODO: lnav
-
-
 # nnn - tiny, lighting fast, feature-packed file manger (HELPERS)
 #
 # Usage:
@@ -86,8 +80,13 @@ zplug "jarun/nnn", use:"scripts/auto-completion/*.zsh"
 # fzf - fuzzy searcher
 # 
 # Usage: 
+#   ctrl-t, ctrl-r
 zplug "junegunn/fzf", use:"shell/*.zsh"
 
+# TODO: VIM
+export EDITOR="vim"
+# TODO: TMUX
+# TODO: lnav
 
 
 ##########################################################################################
