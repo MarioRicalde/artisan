@@ -27,11 +27,6 @@ zplug "zsh-users/zsh-completions"
 # Syntax Highlighting
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-# Calculator
-# Usage:
-#   calc 10+10
-zplug "arzzen/calc.plugin.zsh"
-
 # Long history is long.
 #
 # Usage: 
