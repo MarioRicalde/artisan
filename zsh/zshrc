@@ -88,15 +88,5 @@ export EDITOR="vim"
 # TODO: TMUX
 # TODO: lnav
 
-
-##########################################################################################
-# Install packages that have not been installed yet
-
-if ! zplug check --verbose; then
-    printf "Install? [y/n]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
+# Load it all!
 zplug load #--verbose
