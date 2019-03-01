@@ -61,3 +61,11 @@ jarun/nnn path:scripts/quitcd/quitcd.zsh
 # Usage: 
 #   ctrl-t, ctrl-r
 junegunn/fzf path:shell/key-bindings.zsh
+
+
+# k - Directory listings for zsh with git features
+#
+# Usage:
+#    k     
+#    k -h  (for human readable file sizes)
+supercrabtree/k
