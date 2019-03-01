@@ -1,11 +1,6 @@
 ##########################################################################################
 # PRE CONFIGURATION
 
-# Automatically do cd when a path is entered.
-# Usage:
-#   /home<enter> = cd /home<enter>
-setopt autocd
-
 # Dynamic Loading of antigen.
 source <(antibody init)
 antibody bundle < ~/.artisan/zsh/zsh_plugins.txt
