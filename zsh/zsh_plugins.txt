@@ -1,0 +1,63 @@
+# Fish-like fast/unobtrusive autosuggestions for zsh.
+zsh-users/zsh-autosuggestions
+
+# Additional completion definitions for Zsh.
+zsh-users/zsh-completions
+
+# Syntax Highlighting
+zsh-users/zsh-completions
+
+# Long history is long.
+#
+# Usage: 
+#   ctrl-r (with fzf!)
+robbyrussell/oh-my-zsh path:lib/history.zsh
+
+# Completion improvements.
+robbyrussell/oh-my-zsh path:lib/completion.zsh
+
+# Adds coloring for ls among other things, the PS1 is overridden by us.
+robbyrussell/oh-my-zsh path:lib/theme-and-appearance.zsh
+
+# clipcopy - Copy data to clipboard
+#
+# Usage:
+#  <command> | clipcopy    - copies stdin to clipboard
+#  clipcopy <file>         - copies a file's contents to clipboard
+robbyrussell/oh-my-zsh path:lib/clipboard.zsh
+
+# nmap plugin - adds some useful aliases that are easy to remember.
+#
+# Usage:
+#   nmap_<tab>
+robbyrussell/oh-my-zsh path:plugins/nmap
+
+# Colored Man Pages, as simple as that!
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+
+# z - jump around.
+# Tracks your most used directories, based on 'frecency', train it and use it!
+# 
+# Usage:
+#   z foo bar
+robbyrussell/oh-my-zsh path:plugins/z
+
+# Auto-close and delete matching delimiters in zsh.
+hlissner/zsh-autopair
+
+# Theme 
+jedahan/geometry
+
+# nnn - tiny, lighting fast, feature-packed file manger (HELPERS)
+#
+# Usage:
+#   n
+#   Press ? for help. hjkl for navigation. CTRL-G to exit and cd to directory.
+robbyrussell/oh-my-zsh path:plugins/z
+jarun/nnn path:scripts/quitcd/quitcd.zsh
+
+# fzf - fuzzy searcher
+# 
+# Usage: 
+#   ctrl-t, ctrl-r
+junegunn/fzf path:shell/key-bindings.zsh

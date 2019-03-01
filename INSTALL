@@ -1,5 +1,5 @@
 #!/bin/bash
 
-brew install zplug tree nnn zsh highlight fzf the_platinum_searcher peco lnav
+brew install getantibody/tap/antibody tree nnn zsh highlight fzf the_platinum_searcher peco lnav
 mv -v ~/.zshrc ~/.zshrc.pre-artisan 2> /dev/null
 ln -sf ~/.artisan/zsh/zshrc ~/.zshrc
