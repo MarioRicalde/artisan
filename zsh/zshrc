@@ -3,7 +3,7 @@
 
 # Antibody
 source <(antibody init)
-antibody bundle < ~/.artisan/zsh/zsh_plugins.txt
+antibody bundle < ~/.artisan/zsh/bodies
 
 # Source Artisan files.
 for file in ~/.artisan/zsh/includes/*; do

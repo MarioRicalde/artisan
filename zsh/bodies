@@ -62,10 +62,21 @@ jarun/nnn path:scripts/quitcd/quitcd.zsh
 #   ctrl-t, ctrl-r
 junegunn/fzf path:shell/key-bindings.zsh
 
-
 # k - Directory listings for zsh with git features
 #
 # Usage:
 #    k     
 #    k -h  (for human readable file sizes)
 supercrabtree/k
+
+# tmux - Useful aliases and extra functionality.
+#
+# Usage:
+#    ta, tad, ts, tl, tksv
+robbyrussell/oh-my-zsh path:plugins/tmux
+
+# rsync - This plugin adds aliases for frequent rsync commands.
+#
+# Usage:
+#    rsync-copy, rsync-move, rsync-update, rsync-synchronize
+robbyrussell/oh-my-zsh path:plugins/rsync
