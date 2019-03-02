@@ -1,6 +1,17 @@
 ##########################################################################################
 # LOAD ALL THE THINGS
 
+# Compinit with 12 hour cache.
+autoload -Uz compinit 
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+12) ]]; then
+  compinit;
+else
+  compinit -C;
+fi;
+
+# Chase links
+setopt CHASE_LINKS
+
 # Antibody
 source <(antibody init)
 antibody bundle < ~/.artisan/zsh/bodies
@@ -10,8 +21,6 @@ for file in ~/.artisan/zsh/includes/*; do
   source "$file"
 done
 
-# Chase links
-setopt CHASE_LINKS
 
 ##########################################################################################
 # PACKAGES
