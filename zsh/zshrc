@@ -10,6 +10,9 @@ for file in ~/.artisan/zsh/includes/*; do
   source "$file"
 done
 
+# Chase links
+setopt CHASE_LINKS
+
 ##########################################################################################
 # PACKAGES
 
