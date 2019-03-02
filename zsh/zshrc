@@ -1,7 +1,7 @@
 ##########################################################################################
-# PRE CONFIGURATION
+# LOAD ALL THE THINGS
 
-# Dynamic Loading of antigen.
+# Antibody
 source <(antibody init)
 antibody bundle < ~/.artisan/zsh/zsh_plugins.txt
 
