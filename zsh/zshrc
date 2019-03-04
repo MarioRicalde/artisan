@@ -4,6 +4,10 @@
 # Path to ZSH-related config.
 export ZSH=$HOME/.artisan/zsh
 
+# TODO: Move this somewhere else.
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Your personal zshrc configuration that is not commited to a repository.
 if [[ -a ~/.zshrc_personal ]]
 then
