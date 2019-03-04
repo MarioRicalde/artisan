@@ -4,7 +4,8 @@
 # Path to ZSH-related config.
 export ZSH=$HOME/.artisan/zsh
 
-# Compinit with 12 hour cache.
+
+# Cached each 24 hours.
 autoload -Uz compinit 
 zmodload zsh/stat
 if [ $(date +'%j') != $(zstat -F %j +mtime -- ~/.zcompdump) ]; then
