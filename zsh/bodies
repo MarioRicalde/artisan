@@ -4,9 +4,6 @@ zsh-users/zsh-autosuggestions
 # Additional completion definitions for Zsh.
 zsh-users/zsh-completions
 
-# Syntax Highlighting
-zsh-users/zsh-completions
-
 # Long history is long.
 #
 # Usage: 
