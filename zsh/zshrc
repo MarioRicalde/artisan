@@ -6,7 +6,8 @@ export ZSH=$HOME/.artisan/zsh
 
 # Compinit with 12 hour cache.
 autoload -Uz compinit 
-if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
+zmodload zsh/stat
+if [ $(date +'%j') != $(zstat -F %j +mtime -- ~/.zcompdump) ]; then
   compinit;
 else
   compinit -C;
