@@ -3,7 +3,7 @@
 
 # Compinit with 12 hour cache.
 autoload -Uz compinit 
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+12) ]]; then
+if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
   compinit;
 else
   compinit -C;
