@@ -4,6 +4,14 @@
 # Path to ZSH-related config.
 export ZSH=$HOME/.artisan/zsh
 
+# Your personal zshrc configuration that is not commited to a repository.
+if [[ -a ~/.zshrc_personal ]]
+then
+  source ~/.zshrc_personal
+fi
+export EDITOR="vim"
+alias zshrc="$EDITOR ~/.zshrc_personal"
+
 
 # Cached each 24 hours.
 autoload -Uz compinit 
