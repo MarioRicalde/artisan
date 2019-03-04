@@ -1,6 +1,9 @@
 ##########################################################################################
 # LOAD ALL THE THINGS
 
+# Path to ZSH-related config.
+export ZSH=$HOME/.artisan/zsh
+
 # Compinit with 12 hour cache.
 autoload -Uz compinit 
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
@@ -17,10 +20,10 @@ setopt NO_BG_NICE
 
 # Antibody
 source <(antibody init)
-antibody bundle < ~/.artisan/zsh/bodies
+antibody bundle < $ZSH/bodies
 
 # Source Artisan files.
-for file in ~/.artisan/zsh/includes/*; do
+for file in $ZSH/includes/*; do
   source "$file"
 done
 
