@@ -12,6 +12,9 @@ fi;
 # Chase links
 setopt CHASE_LINKS
 
+# Don't lower priority of BG tasks.
+setopt NO_BG_NICE 
+
 # Antibody
 source <(antibody init)
 antibody bundle < ~/.artisan/zsh/bodies
