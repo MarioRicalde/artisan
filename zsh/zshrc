@@ -11,7 +11,7 @@ then
 fi
 export EDITOR="vim"
 alias zshrc="$EDITOR ~/.zshrc_personal"
-
+alias bodies="$EDITOR $ZSH/bodies"
 
 # Cached each 24 hours.
 autoload -Uz compinit 
