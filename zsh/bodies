@@ -1,3 +1,6 @@
+# Offers syntax highlighting as you go.
+zsh-users/zsh-syntax-highlighting
+
 # Fish-like fast/unobtrusive autosuggestions for zsh.
 zsh-users/zsh-autosuggestions
 
