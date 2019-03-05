@@ -4,9 +4,6 @@ zsh-users/zsh-autosuggestions
 # Additional completion definitions for Zsh.
 zsh-users/zsh-completions
 
-# Adds useful keybindings
-robbyrussell/oh-my-zsh path:lib/key-bindings.zsh
-
 # Long history is long.
 #
 # Usage: 
