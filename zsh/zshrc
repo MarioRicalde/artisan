@@ -33,8 +33,7 @@ setopt CHASE_LINKS
 setopt NO_BG_NICE 
 
 # Antibody
-source <(antibody init)
-antibody bundle < $ZSH/bodies
+source $ZSH/bodies.lock
 
 # Source Artisan files.
 for file in $ZSH/includes/*; do
