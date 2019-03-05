@@ -20,7 +20,7 @@ export VISUAL="vim"
 
 # -- ARTISAN ALIASES -----------------------------------------------------------
 alias zshrc="$EDITOR ~/.zshrc_personal"
-alias bodies="$EDITOR $ZSH/bodies"
+alias bodies="$EDITOR ~/.bodies_personal"
 alias bodies-bundle="$ZSH/bundle-bodies"
 
 # -- ZSH OPTIONS ---------------------------------------------------------------
