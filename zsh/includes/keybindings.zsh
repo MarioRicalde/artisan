@@ -1,11 +1,5 @@
-# Taken from oh-my-zsh 
-# https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/key-bindings.zsh
-#
-# Changes:
-# - Removes any keybindings that collide with other relevant things such as fzf.
+# Modified version from oh-my-zsh.
 
-# Make sure that the terminal is in application mode when zle is active, since
-# only then values from $terminfo are valid
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
     echoti smkx
@@ -48,3 +42,8 @@ else
   bindkey "^[3;5~" delete-char
   bindkey "\e[3~" delete-char
 fi
+
+# Edit the current command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
