@@ -26,13 +26,7 @@ fi
 
 # Cached each 24 hours.
 autoload -Uz compinit 
-zmodload zsh/stat
-if [ $(date +'%j') != $(zstat -F %j +mtime -- ~/.zcompdump) ]; then
-  compinit -C
-  touch ~/.zcompdump
-else
-  compinit
-fi;
+compinit -C
 
 # Antibody
 if [[ ! -a $ZSH/bodies.lock ]]; then
