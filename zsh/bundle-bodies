@@ -1,1 +1,2 @@
+echo "Bundling the bodies..."
 antibody bundle < $ZSH/bodies > $ZSH/bodies.lock
