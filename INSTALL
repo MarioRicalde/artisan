@@ -3,3 +3,6 @@
 brew install getantibody/tap/antibody tree nnn zsh highlight fzf the_platinum_searcher peco lnav coreutils
 mv -v ~/.zshrc ~/.zshrc.pre-artisan 2> /dev/null
 ln -sf ~/.artisan/zsh/zshrc ~/.zshrc
+mv -v ~/.vim ~/.vim.pre-artisan 2> /dev/null
+ln -sf ~/.artisan/vim ~/.vim
+vim +PlugInstall +qall
