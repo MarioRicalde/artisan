@@ -1,2 +1,12 @@
-echo "Bundling the bodies..."
-antibody bundle < $ZSH/bodies > $ZSH/bodies.lock
+#!/bin/zsh
+# TODO: Perhaps here we should create multiple bodies files that are 'containers'
+echo "[Artisan] Bundling the bodies..."
+echo "[Artisan] Using $ZSH/bodies "
+if [[ -f ~/.bodies_personal ]]; then
+  echo "[Artisan] Using $HOME/.bodies_personal "
+  cat $ZSH/bodies <(echo) $HOME/.bodies_personal > /tmp/artisanbodies
+else
+  cat $ZSH/bodies > /tmp/artisanbodies
+fi
+
+antibody bundle < /tmp/artisanbodies > $ZSH/bodies.lock
