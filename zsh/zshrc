@@ -28,9 +28,10 @@ fi
 autoload -Uz compinit 
 zmodload zsh/stat
 if [ $(date +'%j') != $(zstat -F %j +mtime -- ~/.zcompdump) ]; then
-  compinit;
+  compinit -C
+  touch ~/.zcompdump
 else
-  compinit -C;
+  compinit
 fi;
 
 # Antibody
