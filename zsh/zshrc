@@ -35,6 +35,9 @@ else
 fi;
 
 # Antibody
+if [[ ! -a $ZSH/bodies.lock ]]; then
+  bodies-bundle
+fi
 source $ZSH/bodies.lock
 
 # Source Artisan files.
