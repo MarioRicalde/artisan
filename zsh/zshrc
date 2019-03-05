@@ -3,19 +3,26 @@
 
 # Path to ZSH-related config.
 export ZSH=$HOME/.artisan/zsh
-
-# TODO: Move this somewhere else.
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
-# Your personal zshrc configuration that is not commited to a repository.
-if [[ -a ~/.zshrc_personal ]]
-then
-  source ~/.zshrc_personal
-fi
 export EDITOR="vim"
+export VISUAL="vim"
+
+# FIXME: Artisan aliases?
 alias zshrc="$EDITOR ~/.zshrc_personal"
 alias bodies="$EDITOR $ZSH/bodies"
+alias bodies-bundle="$ZSH/bundle-bodies"
+
+# Chase links
+setopt CHASE_LINKS
+
+# Don't lower priority of BG tasks.
+setopt NO_BG_NICE 
+
+# Your personal zshrc configuration that is not commited to a repository.
+if [[ -a ~/.zshrc_personal ]]; then
+  source ~/.zshrc_personal
+fi
 
 # Cached each 24 hours.
 autoload -Uz compinit 
@@ -25,12 +32,6 @@ if [ $(date +'%j') != $(zstat -F %j +mtime -- ~/.zcompdump) ]; then
 else
   compinit -C;
 fi;
-
-# Chase links
-setopt CHASE_LINKS
-
-# Don't lower priority of BG tasks.
-setopt NO_BG_NICE 
 
 # Antibody
 source $ZSH/bodies.lock
@@ -42,9 +43,7 @@ done
 
 
 ##########################################################################################
-# PACKAGES
+# ETC
 
 # TODO: VIM
-export EDITOR="vim"
 # TODO: TMUX
-# TODO: lnav
