@@ -2,3 +2,5 @@
 *.swp
 *.lock
 vim/plugged/*
+vim/undodir/*
+
