@@ -13,7 +13,14 @@ _='
 export ZSH=$HOME/.artisan/zsh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
- 
+
+# FIXME: MOVE ME
+# XQuartz hack.
+# XQuartz clipboard with vim doesn't work without calling an xapp
+# such as xterm. So what we do here is spawn and instakill in the
+# background.
+xeyes &!; pkill -9 "xeyes" &!; osascript -e 'activate application "iTerm"' &!;
+
 # -- EDITOR CONFIGURATION ------------------------------------------------------
 export EDITOR="vim"
 export VISUAL="vim"
