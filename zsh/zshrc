@@ -8,16 +8,10 @@ _='
 └──────────────────────────────────────────────────────────────────────────────┘
 '
 
-# If we're using XQuartz Xterm...
-if [[ -v XTERM_VERSION ]]; then
-  sleep 0.1;
-  osascript -e 'activate application "iTerm"' &!;
-  exit;
-fi
-
 # -- GENERAL CONFIGURATION -----------------------------------------------------
 
 export ZSH=$HOME/.artisan/zsh
+. $ZSH/support/xquartz-fix.zsh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -46,6 +40,7 @@ compinit -C
 # -- ANTIBODY STATIC LOADING ---------------------------------------------------
 [ ! -f $ZSH/bodies.lock ] && bodies-bundle    # Generate if it doesn't exist
 . $ZSH/bodies.lock
+# . $ZSH/bundled-bodies.lock
 
 # -- ARTISAN SPECIFICS ---------------------------------------------------------
 for file in $ZSH/includes/*; do
