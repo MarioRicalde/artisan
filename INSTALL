@@ -15,6 +15,9 @@ brew tap MarioRicalde/vim-with-flags
 brew install vim-with-flags --with-lua --with-client-server --with-override-system-vi
 vim +PlugInstall +qall
 
+# Remove all the antibody plugins.
+rm -rf $(antibody home)/**
+
 # TMUX
 mv -v ~/.tmux.conf ~/.tmux.conf.pre-artisan 2> /dev/null
 mv -v ~/.tmux ~/.tmux.pre-artisan 2> /dev/null
