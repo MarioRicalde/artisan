@@ -10,7 +10,8 @@ _='
 
 # -- GENERAL CONFIGURATION -----------------------------------------------------
 
-export ZSH=$HOME/.artisan/zsh
+export ARTISAN=$HOME/.artisan
+export ZSH=$ARTISAN/zsh
 . $ZSH/support/xquartz-fix.zsh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8

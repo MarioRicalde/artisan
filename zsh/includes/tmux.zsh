@@ -13,3 +13,8 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
+
+# Tmux Plugin Manager.
+alias tmux-clean-plugins=$ARTISAN/tmux/plugins/tpm/bin/clean_plugins
+alias tmux-install-plugins=$ARTISAN/tmux/plugins/tpm/bin/install_plugins
+alias tmux-update-plugins=$ARTISAN/tmux/plugins/tpm/bin/update_plugins
