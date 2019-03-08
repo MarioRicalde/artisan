@@ -24,6 +24,8 @@ mv -v ~/.tmux ~/.tmux.pre-artisan 2> /dev/null
 ln -sf ~/.artisan/tmux ~/.tmux
 ln -sf ~/.artisan/tmux/tmux.conf ~/.tmux.conf
 
+# Set your hostname, for hostname variable, doesn't affect Bonjour.
+scutil --set HostName
 
 # iTerm Defaults
 
