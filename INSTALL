@@ -17,6 +17,7 @@ vim +PlugInstall +qall
 
 # Remove all the antibody plugins.
 rm -rf $(antibody home)/**
+rm -rf ~/.artisan/zsh/bodies.lock
 
 # TMUX
 mv -v ~/.tmux.conf ~/.tmux.conf.pre-artisan 2> /dev/null
