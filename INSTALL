@@ -2,14 +2,24 @@
 
 brew install getantibody/tap/antibody tree nnn zsh highlight fzf the_platinum_searcher peco lnav coreutils
 brew cask install xquartz
+
+# ZSH
 mv -v ~/.zshrc ~/.zshrc.pre-artisan 2> /dev/null
 ln -sf ~/.artisan/zsh/zshrc ~/.zshrc
+
+# VIM
 mv -v ~/.vimrc ~/.vimrc.pre-artisan 2> /dev/null
 mv -v ~/.vim ~/.vim.pre-artisan 2> /dev/null
 ln -sf ~/.artisan/vim ~/.vim
 brew tap MarioRicalde/vim-with-flags
 brew install vim-with-flags --with-lua --with-client-server --with-override-system-vi
 vim +PlugInstall +qall
+
+# TMUX
+mv -v ~/.tmux.conf ~/.tmux.conf.pre-artisan 2> /dev/null
+mv -v ~/.tmux ~/.tmux.pre-artisan 2> /dev/null
+ln -sf ~/.artisan/tmux ~/.tmux
+ln -sf ~/.artisan/tmux/tmux.conf ~/.tmux.conf
 
 
 # iTerm Defaults

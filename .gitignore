@@ -3,4 +3,4 @@
 *.lock
 vim/plugged/*
 vim/undodir/*
-
+tmux/plugins/*
