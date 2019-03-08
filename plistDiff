@@ -1,0 +1,73 @@
+#!/bin/bash
+
+## @file
+## Shows CLI diff between two plist files.
+##
+## Normally, Mac plist files are binary, so diffs do not display. However,
+## there are cases where seeing diffs is important. For example, when tracking
+## changes via Mackup's git storage option.
+##
+## Note this option allows seeing plist diffs without fully installing Xcode
+## tools (otherwise, Xcode tools enables opendiff, which may be a better
+## alternative).
+##
+## Note I prefer to emulate the look and feel of git's default diff, so this
+## script uses the '+/-' diff option, less for vi-like viewing, and supports
+## the colordiff binary if installed.
+##
+## To install colordiff:
+## @code
+## // On Mac:
+## brew install colordiff
+## // On Debian or Ubuntu:
+## sudo apt-get install colordiff
+## @endcode
+##
+## @see https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man5/plist.5.html
+## @see http://stackoverflow.com/questions/9485713/editor-or-way-to-print-plist-in-a-clean-way-without-xcode
+## @see http://stackoverflow.com/questions/13437104/compare-content-of-two-variables-in-bash
+## @see http://stackoverflow.com/questions/4857310/how-to-get-diff-working-like-git-diff
+##
+## Example: 
+## @code
+## ./plistDiff PATH/TO/a.plist PATH/TO/b.plist <ARGS>
+## @endcode
+## Where <ARGS> are any additional diff args.
+
+original_file=$1
+pre_change_file="/tmp/$(basename -- $original_file)"
+post_change_file="$original_file"
+cp $original_file $pre_change_file
+
+echo "File selected is: $original_file"
+echo ""
+echo "Change settings in the app, you have 5 seconds."
+
+secs=5
+while [ $secs -gt 0 ]; do
+   echo -ne "$secs\033[0K\r"
+   sleep 1
+   : $((secs--))
+done
+
+echo ""
+echo "Comparing files:"
+echo "Pre-change file path: $pre_change_file"
+echo "Post-change file path: $post_change_file"
+echo ""
+
+sleep 1
+
+a=$(plutil -convert xml1 -o - "$pre_change_file")
+b=$(plutil -convert xml1 -o - "$post_change_file")
+echo "$a" > lol
+
+# The -u flag displays line numbers with "+" and "-" (rather than ">" and "<").
+# The optional colordiff binary defaults to green/red.
+# Less -R is used to emulate vi.
+which colordiff &> /dev/null
+if [ $? == 0 ]; then
+  diff -u <(echo "$a") <(echo "$b") "${@:2}" | colordiff | less -R
+else
+  diff -u <(echo "$a") <(echo "$b") "${@:2}" | less -R
+fi
