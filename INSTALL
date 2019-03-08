@@ -10,3 +10,13 @@ ln -sf ~/.artisan/vim ~/.vim
 brew tap MarioRicalde/vim-with-flags
 brew install vim-with-flags --with-lua --with-client-server --with-override-system-vi
 vim +PlugInstall +qall
+
+
+# iTerm Defaults
+
+# Allow Clipboard Access.
+defaults write ~/Library/Preferences/com.googlecode.iterm2 AllowClipboardAccess 1
+# Disable Global Keymaps.
+defaults write ~/Library/Preferences/com.googlecode.iterm2 GlobalKeyMap {}
+
+
