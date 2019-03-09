@@ -1,34 +1,51 @@
 #!/bin/bash
 
-brew install getantibody/tap/antibody tree nnn zsh highlight fzf the_platinum_searcher peco lnav coreutils
+# -- HOMEBREW --------------------------------------------------------------------
+brew install getantibody/tap/antibody
+brew install tree
+brew install nnn
+brew install zsh
+brew install highlight
+brew install fzf
+brew install the_platinum_searcher
+brew install peco
+brew install lnav
+brew install coreutils
 brew cask install xquartz
-
-# ZSH
-mv -v ~/.zshrc ~/.zshrc.pre-artisan 2> /dev/null
-ln -sf ~/.artisan/zsh/zshrc ~/.zshrc
-
-# VIM
-mv -v ~/.vimrc ~/.vimrc.pre-artisan 2> /dev/null
-mv -v ~/.vim ~/.vim.pre-artisan 2> /dev/null
-ln -sf ~/.artisan/vim ~/.vim
 brew tap MarioRicalde/vim-with-flags
 brew install vim-with-flags --with-lua --with-client-server --with-override-system-vi
-vim +PlugInstall +qall
 
-# Remove all the antibody plugins.
-rm -rf $(antibody home)/**
-rm -rf ~/.artisan/zsh/bodies.lock
+# -- BACKUP & SYMLINK ------------------------------------------------------------
+artisan_file_suffix=".pre-artisan"
+artisan_path="$( cd "$(dirname "$0")" ; pwd -P )"
+declare -a ARTISAN_FILES=(
+  "$artisan_path:$HOME/.artisan"
+  "$artisan_path/zsh/zshrc:$HOME/.zshrc"
+  "$artisan_path/vim/:$HOME/.vim"
+  "$artisan_path/vim/vimrc:$HOME/.vimrc"
+  "$artisan_path/tmux/tmux.conf:$HOME/.tmux.conf"
+  "$artisan_path/tmux:$HOME/.tmux"
+)
 
-# TMUX
-mv -v ~/.tmux.conf ~/.tmux.conf.pre-artisan 2> /dev/null
-mv -v ~/.tmux ~/.tmux.pre-artisan 2> /dev/null
-ln -sf ~/.artisan/tmux ~/.tmux
-ln -sf ~/.artisan/tmux/tmux.conf ~/.tmux.conf
+for paths in "${ARTISAN_FILES[@]}"; do 
+  IFS=":"; path=($paths); a_path="${path[0]}"; h_path="${path[1]}";
+  command="mv -v $h_path $h_path$artisan_file_suffix 2> /dev/null"
+  echo "$command"
+  eval $command
+  command="ln -sf $a_path $h_path"
+  echo "$command"
+  eval $command
+done
 
-# Set your hostname, for hostname variable, doesn't affect Bonjour.
-scutil --set HostName
+# -- POST CONFIG -----------------------------------------------------------------
 
-# iTerm Defaults
+vim +PlugInstall +qall                              # Install Vim Plugins.
+rm -rf $(antibody home)/**                          # Clean exisitng ZSH plugins.
+rm -rf $artisan_path/zsh/bodies.lock
+scutil --set HostName                               # Set hostname without affecting
+                                                    # Bonjour.
+
+# -- APPLICATION CONFIGS ---------------------------------------------------------
 
 # Allow Clipboard Access.
 defaults write ~/Library/Preferences/com.googlecode.iterm2 AllowClipboardAccess 1
