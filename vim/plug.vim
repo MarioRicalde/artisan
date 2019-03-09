@@ -1,7 +1,7 @@
 " Plugin Initialization.
 call plug#begin('~/.vim/plugged')
 " Functionality.
-Plug '/opt/tools/utils/fzf' | Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align',       { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
