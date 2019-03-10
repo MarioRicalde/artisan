@@ -1,10 +1,7 @@
 #!/bin/bash
-echo "Benchmarking every second."
 
-while true; do 
-  /usr/bin/time zsh -i -c 'exit' 2> /tmp/artisantime;
-  artisantime=$(cat /tmp/artisantime); 
-  echo -ne "$artisantime"\\r; 
-  sleep 1
-done
+if ! type "watch" > /dev/null; then
+  brew install watch
+fi
 
+watch "/usr/bin/time -p zsh -i -c 'exit'"
