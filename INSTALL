@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # -- HOMEBREW --------------------------------------------------------------------
+
 brew install getantibody/tap/antibody
 brew install tree
 brew install nnn
 brew install zsh
 brew install highlight
 brew install fzf
-brew install the_platinum_searcher
+brew install the_silver_searcher
 brew install peco
 brew install lnav
 brew install coreutils
@@ -15,7 +16,9 @@ brew cask install xquartz
 brew tap MarioRicalde/vim-with-flags
 brew install vim-with-flags --with-lua --with-client-server --with-override-system-vi
 
+
 # -- BACKUP & SYMLINK ------------------------------------------------------------
+
 artisan_file_suffix=".pre-artisan"
 artisan_path="$( cd "$(dirname "$0")" ; pwd -P )"
 declare -a ARTISAN_FILES=(
@@ -36,6 +39,7 @@ for paths in "${ARTISAN_FILES[@]}"; do
   echo "$command"
   eval $command
 done
+
 
 # -- POST CONFIG -----------------------------------------------------------------
 
