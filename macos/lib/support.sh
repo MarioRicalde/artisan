@@ -10,6 +10,8 @@ CYAN='\033[01;36m'
 
 VISUAL_MODE='false'
 
+mkdir -p backup;
+
 while getopts 'abf:v' flag; do
   case "${flag}" in
     v|--visual) VISUAL_MODE='true' ;;
