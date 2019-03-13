@@ -30,7 +30,7 @@
 ##
 ## Example: 
 ## @code
-## ./plistDiff PATH/TO/a.plist PATH/TO/b.plist <ARGS>
+## ./plist-diff PATH/TO/a.plist PATH/TO/b.plist <ARGS>
 ## @endcode
 ## Where <ARGS> are any additional diff args.
 
