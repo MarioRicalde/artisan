@@ -1,0 +1,10 @@
+#!/bin/bash
+source "lib/support.sh"
+
+clear_backup true
+
+for file in includes/recoverable/*; do
+  source $file
+done
+
+restore true
