@@ -30,6 +30,7 @@ set hlsearch                    "Hightlight Search
 set encoding=utf-8              "We like utf8
 set synmaxcol=1000              "Reduce synmaxcol for performance.
 set cursorline                  "Current line highlight.
+set number                      "Absolute numbers
 
 " Mouse
 silent! set ttymouse=xterm2
