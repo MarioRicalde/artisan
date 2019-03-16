@@ -60,7 +60,6 @@ sleep 1
 
 a=$(plutil -convert xml1 -o - "$pre_change_file")
 b=$(plutil -convert xml1 -o - "$post_change_file")
-echo "$a" > lol
 
 # The -u flag displays line numbers with "+" and "-" (rather than ">" and "<").
 # The optional colordiff binary defaults to green/red.
