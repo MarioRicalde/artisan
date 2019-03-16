@@ -14,7 +14,7 @@ _='
 #
 #   1. xterm needs to open once when XQuartz open, so do it and exit with our zshrc instead of overriding the defaults.
 #   2. You can run xterm from iTerm to fix sync if XQuartz opened on its own via iTerm’s processes.
-if [[ -v XTERM_VERSION ]]; then
+if [ "$TERM" = "xterm" ]; then
   sleep 0.1;
   osascript -e 'activate application "iTerm"' &!;
   exit;
