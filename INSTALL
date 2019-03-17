@@ -51,9 +51,3 @@ scutil --set HostName                               # Set hostname without affec
 
 # -- APPLICATION CONFIGS ---------------------------------------------------------
 
-# Allow Clipboard Access.
-defaults write ~/Library/Preferences/com.googlecode.iterm2 AllowClipboardAccess 1
-# Disable Global Keymaps.
-defaults write ~/Library/Preferences/com.googlecode.iterm2 GlobalKeyMap {}
-
-
