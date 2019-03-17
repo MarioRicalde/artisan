@@ -34,8 +34,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " -- THEME -----------------------------------------------------------------------
 
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'itchyny/lightline.vim'
-Plug 'vim-scripts/xoria256.vim'
 
 
 " -- LANGUAGES -------------------------------------------------------------------
