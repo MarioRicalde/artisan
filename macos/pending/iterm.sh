@@ -51,3 +51,6 @@ defaults write ~/Library/Preferences/com.googlecode.iterm2 AllowClipboardAccess 
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.artisan/iterm"
 
+# Open. Restart. Open. This is the only way it loads the plist.
+open /Applications/iTerm.app; sudo pkill -9 iTerm; open /Applications/iTerm.app;
+
