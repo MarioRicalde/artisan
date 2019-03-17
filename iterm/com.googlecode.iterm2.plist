@@ -690,6 +690,8 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -706,15 +708,15 @@
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.25</real>
+				<real>0.2421875</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.9268307089805603</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.70213186740875244</real>
+				<real>0.0</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -1063,6 +1065,8 @@
 				<key>Red Component</key>
 				<real>0.206512451171875</real>
 			</dict>
+			<key>Minimum Contrast</key>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1126,10 +1130,12 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
+			<true/>
+			<key>Use Cursor Guide</key>
 			<true/>
 			<key>Use Italic Font</key>
 			<true/>
