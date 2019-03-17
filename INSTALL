@@ -19,7 +19,7 @@ brew install vim-with-flags --with-lua --with-client-server --with-override-syst
 
 # -- BACKUP & SYMLINK ------------------------------------------------------------
 
-artisan_file_suffix=".pre-artisan"
+artisan_file_suffix=".pre-artisan.$(date +'%d-%m-%y.%H-%M-%S')"
 artisan_path="$( cd "$(dirname "$0")" ; pwd -P )"
 declare -a ARTISAN_FILES=(
   "$artisan_path:$HOME/.artisan"
