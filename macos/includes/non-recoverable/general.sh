@@ -9,11 +9,10 @@ _='
 └──────────────────────────────────────────────────────────────────────────────┘
 '
 
-announce_module "Dock"
+announce_module "Operating System"
 
-announce "Add iOS Simulator to Launchpad"
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+announce "Restart automatically if the computer freezes"
+sudo systemsetup -setrestartfreeze on
 
-announce "Reset Launchpad, but keep the desktop wallpaper intact"
-find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
-
+announce "Never go into computer sleep mode"
+sudo systemsetup -setcomputersleep Off > /dev/null

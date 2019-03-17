@@ -33,3 +33,10 @@ backup_and_write 'NSGlobalDomain' 'InitialKeyRepeat' '-int' '15'
 
 announce "Disable auto-correct"
 backup_and_write 'NSGlobalDomain' 'NSAutomaticSpellingCorrectionEnabled' '-bool' 'false'
+
+announce "Disable smart QUOTES as they’re annoying when typing code"
+backup_and_write 'NSGlobalDomain' 'NSAutomaticQuoteSubstitutionEnabled' '-bool' 'false'
+
+announce "Disable smart DASHES as they’re annoying when typing code"
+backup_and_write 'NSGlobalDomain' 'NSAutomaticDashSubstitutionEnabled' '-bool' 'false'
+

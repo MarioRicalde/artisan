@@ -9,11 +9,12 @@ _='
 └──────────────────────────────────────────────────────────────────────────────┘
 '
 
-announce_module "Dock"
+announce_module "iTerm"
 
-announce "Add iOS Simulator to Launchpad"
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+announce "Use the artisan settings for this, seriously"
+backup_and_write 'com.googlecode.iterm2.plist' 'LoadPrefsFromCustomFolder' '-bool' 'true'
+backup_and_write 'com.googlecode.iterm2.plist' 'PrefsCustomFolder' '-string' '"~/.artisan/iterm"'
 
-announce "Reset Launchpad, but keep the desktop wallpaper intact"
-find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
+announce "Open. Restart. Open. This is the only way it loads the plist"
+open /Applications/iTerm.app; sudo pkill -9 iTerm; open /Applications/iTerm.app;
 

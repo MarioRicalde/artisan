@@ -78,3 +78,10 @@ backup_and_write 'com.apple.finder' 'WarnOnEmptyTrash' '-bool' 'false'
 announce "Enable AirDrop over Ethernet and on unsupported Macs running Lion"
 backup_and_write 'com.apple.NetworkBrowser' 'BrowseAllInterfaces' '-bool' 'true'
 
+announce "Expand save panel by default"
+backup_and_write 'NSGlobalDomain' 'NSNavPanelExpandedStateForSaveMode' '-bool' 'true'
+backup_and_write 'NSGlobalDomain' 'NSNavPanelExpandedStateForSaveMode2' '-bool' 'true'
+
+announce "Expand print panel by default"
+backup_and_write 'NSGlobalDomain' 'PMPrintingExpandedStateForPrint' '-bool' 'true'
+backup_and_write 'NSGlobalDomain' 'PMPrintingExpandedStateForPrint2' '-bool' 'true'
