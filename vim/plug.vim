@@ -47,7 +47,7 @@ Plug 'jelera/vim-javascript-syntax'
 " -- PERSONAL OVERRIDES ----------------------------------------------------------
 
 if filereadable(expand("~/.plug_personal"))
-  source ~/.vimrc_personal
+  source ~/.plug_personal
 endif
 
 
