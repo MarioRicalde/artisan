@@ -54,7 +54,7 @@ robbyrussell/oh-my-zsh path:plugins/z
 hlissner/zsh-autopair
 
 # Theme 
-jedahan/geometry branch:mnml
+jedahan/geometry branch:simple-async
 
 # nnn - tiny, lighting fast, feature-packed file manger (HELPERS)
 #
