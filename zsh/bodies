@@ -88,3 +88,14 @@ robbyrussell/oh-my-zsh path:plugins/tmux
 # Usage:
 #    rsync-copy, rsync-move, rsync-update, rsync-synchronize
 robbyrussell/oh-my-zsh path:plugins/rsync
+
+
+# docker - Completions
+# 
+# Usage:
+#    docker <tab>
+#    docker-compose <tab>
+#    docker-machine <tab>
+docker/cli path:contrib/completion/zsh kind:fpath
+docker/compose path:contrib/completion/zsh kind:fpath
+docker/machine path:contrib/completion/zsh kind:fpath
