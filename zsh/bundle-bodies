@@ -9,8 +9,9 @@ else
   cat $ZSH/bodies > /tmp/artisanbodies
 fi
 
+antibody bundle < /tmp/artisanbodies > $ZSH/bodies.lock
+
 # Regenerate completion
 rm $HOME/.zcompdump
 zsh -i -c 'compinit; exit;'
 
-antibody bundle < /tmp/artisanbodies > $ZSH/bodies.lock
