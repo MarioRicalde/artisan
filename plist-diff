@@ -56,8 +56,6 @@ echo "Pre-change file path: $pre_change_file"
 echo "Post-change file path: $post_change_file"
 echo ""
 
-sleep 1
-
 a=$(plutil -convert xml1 -o - "$pre_change_file")
 b=$(plutil -convert xml1 -o - "$post_change_file")
 
