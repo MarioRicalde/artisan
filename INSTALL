@@ -2,7 +2,7 @@
 
 # -- HOMEBREW --------------------------------------------------------------------
 
-brew bundle --file=Brewfile
+brew bundle
 pip3 install --user pynvim # Requirement for deoplete
 
 
