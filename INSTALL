@@ -46,10 +46,13 @@ done
 
 # -- POST CONFIG -----------------------------------------------------------------
 
-vim +PlugInstall +qall                              # Install Vim Plugins.
+vim +PlugInstall +qall 2> /dev/null                 # Install Vim Plugins.
 rm -rf $(antibody home)/**                          # Clean exisitng ZSH plugins.
 rm -rf $artisan_path/zsh/bodies.lock
-scutil --set HostName                               # Set hostname without affecting
+$artisan_path/bundle-bodies
+source ~/.zshrc
+
+#scutil --set HostName                               # Set hostname without affecting
                                                     # Bonjour.
 
 # -- APPLICATION CONFIGS ---------------------------------------------------------
