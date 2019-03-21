@@ -27,6 +27,13 @@ robbyrussell/oh-my-zsh path:lib/completion.zsh
 # Adds coloring for ls among other things, the PS1 is overridden by us.
 robbyrussell/oh-my-zsh path:lib/theme-and-appearance.zsh
 
+# you can type in any part of any command from history and then press chosen keys, 
+# such as the UP and DOWN arrows, to cycle through matches.
+# 
+# Usage:
+# 	<up><down>
+zsh-users/zsh-history-substring-search
+
 # clipcopy - Copy data to clipboard
 #
 # Usage:

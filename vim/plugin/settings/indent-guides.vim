@@ -8,36 +8,18 @@
 
 " -- GENERAL CONFIGURATION -------------------------------------------------------
 
-let g:easy_align_delimiters = {
-\ '>': { 'pattern': '>>\|=>\|>' },
-\ '\': { 'pattern': '\\' },
-\ '/': { 'pattern': '//\+\|/\*\|\*/', 'delimiter_align': 'l', 'ignore_groups': ['!Comment'] },
-\ ']': {
-\     'pattern':       '\]\zs',
-\     'left_margin':   0,
-\     'right_margin':  1,
-\     'stick_to_left': 0
-\   },
-\ ')': {
-\     'pattern':       ')\zs',
-\     'left_margin':   0,
-\     'right_margin':  1,
-\     'stick_to_left': 0
-\   },
-\ 'f': {
-\     'pattern': ' \(\S\+(\)\@=',
-\     'left_margin': 0,
-\     'right_margin': 0
-\   },
-\ 'd': {
-\     'pattern': ' \ze\S\+\s*[;=]',
-\     'left_margin': 0,
-\     'right_margin': 0
-\   }
-\ }
+let g:indentLine_fileTypeExclude = ['startify', 'help']
+let g:indentLine_conceallevel=1
+let g:indentLine_setConceal=1
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+" symbols used for different indentation levels.
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+" color - subtle low contrast display
+let g:indentLine_color_term=8
+let g:indentLine_bgcolor_term='NONE'
+
+" required if termguicolors is set
+let g:indentLine_color_gui='#4e586d'
+let g:indentLine_bgcolor_gui='NONE'
+

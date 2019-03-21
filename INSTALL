@@ -17,6 +17,7 @@ brew install coreutils
 brew cask install xquartz
 brew tap MarioRicalde/vim-with-flags
 brew install vim-with-flags --with-lua --with-client-server --with-override-system-vi
+pip3 install --user pynvim # Requirement for deoplete
 
 
 # -- BACKUP & SYMLINK ------------------------------------------------------------
