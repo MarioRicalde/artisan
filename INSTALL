@@ -36,7 +36,6 @@ vim +PlugInstall +qall 2> /dev/null                 # Install Vim Plugins.
 rm -rf $(antibody home)/**                          # Clean exisitng ZSH plugins.
 rm -rf $artisan_path/zsh/bodies.lock
 $artisan_path/zsh/bundle-bodies
-source ~/.zshrc
 
 #scutil --set HostName                               # Set hostname without affecting
                                                     # Bonjour.
