@@ -11,7 +11,7 @@ then
   rm -rf $HOME/.zshrc
 
   # Delete all pre-artisan archives
-  find $HOME -name '*pre-artisan*' -delete
+  find $HOME -maxdepth 1 -name '*pre-artisan*' -delete
 
   echo "All symlinks and history removed"
 fi
