@@ -2,6 +2,8 @@
 
 # -- HOMEBREW --------------------------------------------------------------------
 
+brew tap caskroom/fonts
+brew cask install font-iosevka-nerd-font
 brew install getantibody/tap/antibody
 brew install tree
 brew install nnn

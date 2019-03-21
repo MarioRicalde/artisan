@@ -10,7 +10,7 @@
 
 "       ␤
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ]
