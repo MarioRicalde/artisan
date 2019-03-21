@@ -7,4 +7,6 @@ _='
 │  Docs: https://git.io/fhx1B                                 License: GPL 3.0 │ 
 └──────────────────────────────────────────────────────────────────────────────┘
 '
-GEOMETRY_GIT_COLOR_BRANCH=8
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
