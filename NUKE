@@ -1,17 +1,37 @@
 #!/bin/bash
 
+announce_and_execute() {
+  echo $1
+  eval $1
+}
+
 read -p "FOR ARTISAN DEVELOPMENT ONLY, THIS WILL NUKE IT ALL! (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  rm -rf $HOME/.tmux
-  rm -rf $HOME/.tmux.conf
-  rm -rf $HOME/.vim
-  rm -rf $HOME/.vimrc
-  rm -rf $HOME/.zshrc
+  echo "Removing symlinks..."
+  announce_and_execute "rm -rf $HOME/.tmux"
+  announce_and_execute "rm -rf $HOME/.tmux.conf"
+  announce_and_execute "rm -rf $HOME/.vim"
+  announce_and_execute "rm -rf $HOME/.vimrc"
+  announce_and_execute "rm -rf $HOME/.zshrc"
 
-  # Delete all pre-artisan archives
-  find $HOME -maxdepth 1 -name '*pre-artisan*' -delete
+  echo ""
+  echo "Removing pre-artisan files..."
+  announce_and_execute "find $HOME -maxdepth 1 -name '*pre-artisan*' -delete"
 
-  echo "All symlinks and history removed"
+  echo ""
+  echo "Uninstalling isntalled brews..."
+  announce_and_execute "yes | brew rmtree fzf"
+  announce_and_execute "yes | brew rmtree tree"
+  announce_and_execute "yes | brew rmtree nnn"
+  announce_and_execute "yes | brew rmtree highlight"
+  announce_and_execute "yes | brew rmtree the_silver_searcher"
+  announce_and_execute "yes | brew rmtree peco"
+  announce_and_execute "yes | brew rmtree lnav"
+  announce_and_execute "yes | brew rmtree coreutils"
+  announce_and_execute "yes | brew rmtree vim-with-flags"
+
+  echo ""
+  echo "Done!"
 fi
