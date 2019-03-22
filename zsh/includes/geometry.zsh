@@ -8,3 +8,5 @@ _='
 └──────────────────────────────────────────────────────────────────────────────┘
 '
 GEOMETRY_GIT_COLOR_BRANCH=8
+GEOMETRY_GIT_SYMBOL_CLEAN=""
+GEOMETRY_GIT_SYMBOL_DIRTY="ﯟ"
