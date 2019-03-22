@@ -10,6 +10,7 @@ _='
 '
 
 announce_module "Mail"
+push_app "Mail"
 
 announce "Disable send and reply animations in Mail.app"
 backup_and_write 'com.apple.mail' 'DisableReplyAnimations' '-bool' 'true'

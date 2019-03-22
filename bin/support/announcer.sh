@@ -1,20 +1,27 @@
 #!/bin/bash
 
 first_module=true
+announcer_disabled=false
 
 announce() {
-  echo -e " ┣━ $1"
+  if [ "$announcer_disabled" = false ]; then
+    echo -e " ┣━ $1"
+  fi
 }
 
 separate() {
-  echo " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  if [ "$announcer_disabled" = false ]; then
+    echo " ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  fi
 }
 
 announce_module() {
-  if [ "$first_module" = false ]; then
-    separate
+  if [ "$announcer_disabled" = false ]; then
+    if [ "$first_module" = false ]; then
+      separate
+    fi
+    first_module=false
+    echo -e "\n ┏ ${BLUE}Module${RESET}: $1"
+    echo " ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   fi
-  first_module=false
-  echo -e "\n ┏ ${BLUE}Module${RESET}: $1"
-  echo " ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 }

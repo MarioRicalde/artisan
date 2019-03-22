@@ -10,6 +10,8 @@ _='
 '
 
 announce_module "Finder"
+push_app "Finder"
+push_app "SystemUIServer" 
 
 announce "Allow quitting via ⌘ + Q; doing so will also hide desktop icons"
 backup_and_write 'com.apple.finder' 'QuitMenuItem' '-bool' 'true'

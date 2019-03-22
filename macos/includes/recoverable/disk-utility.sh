@@ -10,6 +10,7 @@ _='
 '
 
 announce_module "Disk Utility"
+push_app "Disk Utility"
 
 announce "Enable the debug menu in Disk Utility"
 backup_and_write 'com.apple.DiskUtility' 'DUDebugMenuEnabled' '-bool' 'true'

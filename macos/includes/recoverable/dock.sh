@@ -10,6 +10,7 @@ _='
 '
 
 announce_module "Dock"
+push_app "Dock"
 
 announce "Enable highlight hover effect for the grid view of a stack (Dock)"
 backup_and_write 'com.apple.dock' 'mouse-over-hilite-stack' '-bool' 'true'

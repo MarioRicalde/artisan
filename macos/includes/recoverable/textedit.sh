@@ -10,6 +10,7 @@ _='
 '
 
 announce_module "TextEdit"
+push_app "TextEdit"
 
 announce "Use plain text mode for new TextEdit documents"
 backup_and_write 'com.apple.TextEdit' 'RichText' '-int' '0'

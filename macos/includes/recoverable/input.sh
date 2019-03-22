@@ -11,9 +11,6 @@ _='
 
 announce_module "Trackpad, mouse, keyboard, Bluetooth accessories, and input"
 
-announce "Increase sound quality for Bluetooth headphones/headsets"
-backup_and_write 'com.apple.BluetoothAudioAgent' "'Apple Bitpool Min (editable)'" '-int' '40'
-
 announce "Enable full keyboard access for all controls"
 backup_and_write 'NSGlobalDomain' 'AppleKeyboardUIMode' '-int' '3'
 

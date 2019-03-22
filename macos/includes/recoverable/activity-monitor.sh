@@ -10,6 +10,7 @@ _='
 '
 
 announce_module "Activity Monitor"
+push_app "Activity Monitor"
 
 announce "Show the main window when launching Activity Monitor"
 backup_and_write 'com.apple.ActivityMonitor' 'OpenMainWindow' '-bool' 'true'

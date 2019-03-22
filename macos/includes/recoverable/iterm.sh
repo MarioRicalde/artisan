@@ -13,8 +13,4 @@ announce_module "iTerm"
 
 announce "Use the artisan settings for this, seriously"
 backup_and_write 'com.googlecode.iterm2.plist' 'LoadPrefsFromCustomFolder' '-bool' 'true'
-backup_and_write 'com.googlecode.iterm2.plist' 'PrefsCustomFolder' '-string' '"~/.artisan/iterm"'
-
-# announce "Open. Restart. Open. This is the only way it loads the plist"
-# open /Applications/iTerm.app; sudo pkill -9 iTerm; open /Applications/iTerm.app;
-
+backup_and_write 'com.googlecode.iterm2.plist' 'PrefsCustomFolder' '-string' '~/.artisan/iterm'

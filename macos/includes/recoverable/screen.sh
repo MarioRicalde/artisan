@@ -21,9 +21,5 @@ backup_and_write 'com.apple.screencapture' 'location' '-string' '"${HOME}/Deskto
 announce "Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)"
 backup_and_write 'com.apple.screencapture' 'type' '-string' '"png"'
 
-announce "Disable shadow in screenshots"
-backup_and_write 'com.apple.screencapture' 'disable-shadow' '-bool' 'true'
-
 announce "Enable subpixel font rendering on non-Apple LCDs"
-# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
 backup_and_write 'NSGlobalDomain' 'AppleFontSmoothing' '-int' '1'

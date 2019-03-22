@@ -10,6 +10,7 @@ _='
 '
 
 announce_module "Safari & Webkit"
+push_app "Safari"
 
 announce "Don’t send search queries to Apple (privacy)"
 backup_and_write 'com.apple.Safari' 'UniversalSearchEnabled' '-bool' 'false'

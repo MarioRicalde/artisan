@@ -48,6 +48,7 @@ backup_and_write() {
   fi
 
   echo "defaults write $DOMAIN $KEY $VALUE_TYPE $NEW_VALUE"
+  defaults write $DOMAIN $KEY $VALUE_TYPE $NEW_VALUE
 
   BACKUP_FILE_CONTENT="#!/bin/bash\nDOMAIN=\"$DOMAIN\";\nKEY=\"$KEY\";\nVALUE_TYPE=\"$VALUE_TYPE\";\nVALUE=\"$ORIGINAL_VALUE\";"
   echo -e "$BACKUP_FILE_CONTENT" > $backup_dir/${SANITIZED_FILE_NAME}
@@ -83,9 +84,17 @@ restore() {
     if [[ $VALUE == "NONE" ]]; then
       announce "${RED}DELETE ${RESET} ━ Value was not set before ARTISAN."
       announce "defaults delete $DOMAIN $KEY"
+      defaults delete $DOMAIN $KEY
     else
+      if [ "$VALUE_TYPE" = "-bool" ]; then
+        case "$VALUE" in
+          "0") VALUE="false" ;;
+          "1") VALUE="true" ;;
+        esac
+      fi
       announce  "${GREEN}RESTORE${RESET} ━ Value was set before ARTISAN."
       announce "defaults write $DOMAIN $KEY $VALUE_TYPE $VALUE"
+      defaults write $DOMAIN $KEY $VALUE_TYPE $VALUE
     fi
 
     visual_mode?
