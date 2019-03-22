@@ -48,3 +48,6 @@ for file in $ZSH/includes/*; do
   . "$file"
 done
 
+# Artisan 'bins'
+export PATH=$ARTISAN/bin:$PATH
+

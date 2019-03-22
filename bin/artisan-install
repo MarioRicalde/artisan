@@ -2,13 +2,15 @@
 
 # -- HOMEBREW --------------------------------------------------------------------
 
-brew bundle
+brew bundle --file=../Brewfile
 pip3 install --user pynvim # Requirement for deoplete
 
 # -- BACKUP & SYMLINK ------------------------------------------------------------
 
+bin_path="$( cd "$(dirname "$0")" ; pwd -P )"
+artisan_path="$bin_path/.."
 artisan_file_suffix=".pre-artisan.$(date +'%d-%m-%y.%H-%M-%S')"
-artisan_path="$( cd "$(dirname "$0")" ; pwd -P )"
+
 declare -a ARTISAN_FILES=(
   "$artisan_path:$HOME/.artisan"
   "$artisan_path/zsh/zshrc:$HOME/.zshrc"

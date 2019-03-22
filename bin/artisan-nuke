@@ -1,5 +1,4 @@
 #!/bin/bash
-
 announce_and_execute() {
   echo $1
   eval $1
@@ -10,12 +9,13 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Removing symlinks..."
+  announce_and_execute "rm -rf $HOME/.artisan"
   announce_and_execute "rm -rf $HOME/.tmux"
   announce_and_execute "rm -rf $HOME/.tmux.conf"
   announce_and_execute "rm -rf $HOME/.vim"
   announce_and_execute "rm -rf $HOME/.vimrc"
   announce_and_execute "rm -rf $HOME/.zshrc"
-  announce_and_execute "rm -rf vim/autoload/plug.vim"
+  announce_and_execute "rm -rf ../vim/autoload/plug.vim"
 
   echo ""
   echo "Removing pre-artisan files..."

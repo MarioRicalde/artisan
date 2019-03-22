@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 usage() {
-	echo "ansi-colors <n>"
+	echo "artisan-colors <n>"
 	exit 0
 }
 

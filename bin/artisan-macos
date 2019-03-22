@@ -1,0 +1,41 @@
+#!/bin/bash
+
+bin_path="$( cd "$(dirname "$0")" ; pwd -P )"
+artisan_path="$bin_path/.."
+support_path="$bin_path/support"
+source $support_path/colors.sh
+source $support_path/announcer.sh
+source $support_path/macos-configurator.sh
+
+usage() { echo "Usage: artisan-macos (install|restore) [-v] [-p <backup_name>]" 1>&2; exit 1; }
+
+subcommand=$1; shift
+case "$subcommand" in
+  install)
+    source $support_path/macos-flags.sh
+    resolve_backup_directory
+    for file in $artisan_path/macos/includes/recoverable/*; do
+      source $file
+    done
+    ;;
+  restore)
+    source $support_path/macos-flags.sh
+    resolve_backup_directory
+    restore
+    ;;
+  *)
+    usage
+    exit 1
+esac
+
+separate
+
+# source $bin_path/support/iterm-ban.sh
+
+# Ask for the administrator password upfront
+# sudo -v
+# Keep-alive: update existing `sudo` time stamp until `osxprep.sh` has finished
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+#separate
+
