@@ -15,6 +15,7 @@ then
   announce_and_execute "rm -rf $HOME/.vim"
   announce_and_execute "rm -rf $HOME/.vimrc"
   announce_and_execute "rm -rf $HOME/.zshrc"
+  announce_and_execute "rm -rf vim/autoload/plug.vim"
 
   echo ""
   echo "Removing pre-artisan files..."

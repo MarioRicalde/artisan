@@ -3,5 +3,6 @@
 *.lock
 vim/plugged/*
 vim/undodir/*
+vim/autoload/plug.vim
 tmux/plugins/*
 macos/backup/*
