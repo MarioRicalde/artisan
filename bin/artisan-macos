@@ -19,6 +19,11 @@ case "$subcommand" in
     for file in $artisan_path/macos/includes/recoverable/*; do
       source $file
     done
+    if [ "$arg_unrecoverable" = "true" ]; then
+      for file in $artisan_path/macos/includes/unrecoverable/*; do
+        source $file
+      done
+    fi
     ;;
   restore)
     source $support_path/macos-flags.sh
