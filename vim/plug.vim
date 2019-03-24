@@ -168,6 +168,27 @@ Plug 'christoomey/vim-tmux-navigator'
 " └─────────────┴───────────────────────────────────────────────────────────┘
 Plug 'tpope/vim-fugitive'
 
+" vim-unimpaired - handy bracket mappings
+"
+" Usage:
+"   ┌──────────────────────────────────┬──────────────────────────────────┐
+"   │  PREVIOUS                        │  NEXT                            │
+"   ├──────────────────────────────────┼──────────────────────────────────┤
+"   │  [a     - :previous              │  ]a     - :next                  │
+"   │  [A     - :first                 │  ]A     - :next                  │
+"   │  [b     - :bprevious             │  ]b     - :bnext                 │
+"   │  [B     - :bfirst                │  ]B     - :blast                 │
+"   │  [l     - :lprevious             │  ]l     - :lnext                 │
+"   │  [L     - :lfirst                │  ]L     - :llast                 │
+"   │  [<C-L> - :lpfile                │  ]<C-L> - :lnfile                │
+"   │  [q     - :cprevious             │  ]q     - :cnext                 │
+"   │  [Q     - :cfirst                │  ]Q     - :clast                 │
+"   │  [t     - :tprevious             │  ]t     - :tnext                 │
+"   │  [T     - :tfirst                │  ]T     - :tlast                 │
+"   │  [T     - :tfirst                │  ]T     - :tlast                 │
+"   │  [<C-T> - :ptprevious            │  ]<C-T> - :ptnext                │
+"   └──────────────────────────────────┴──────────────────────────────────┘
+Plug 'tpope/vim-unimpaired'
 
 " -- THEME -----------------------------------------------------------------------
 
