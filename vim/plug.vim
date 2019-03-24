@@ -143,6 +143,31 @@ Plug 'mattn/emmet-vim'
 "   <C-l> - right
 Plug 'christoomey/vim-tmux-navigator'
 
+" vim-fugitive - the best git wrapper for vim
+"
+" Usage:
+" ┌─────────────┬───────────────────────────────────────────────────────────┐
+" │ PREVIOUS    │                                                           │
+" ├─────────────┼───────────────────────────────────────────────────────────┤
+" │ :Gblame     │  interactive `git blame` output.                          │
+" │ :Gmove      │  does git `git mv` and simultaneously rename buffer.      │
+" │ :Gwrite     │  equivalent of git `git add .`                            │
+" │ :Gread      │  variant of `git checkout -- filename` using              │
+" │             │  the buffer.                                              │
+" │ :Gcommit    │  If there's nothing to commit :Gstatus is called          │
+" │             │  instead.                                                 │
+" │ :Gpush      │  variant of `git checkout -- filename` using the          │
+" │             │  buffer.                                                  │
+" │ :Glog       │  load previous revisions of file into quickfix list,      │
+" │             │  use  [q for :cprevious an ]q for :cnext                  │
+" │ :Gstatus    │  Equivalent to `git status` but interactive.              │
+" │             │     `-`  - keys to toggle.                                │
+" │             │     `=`  - inline diff toggle.                            │
+" │             │     `P`  - Add --patch or reset --patch                   │
+" │             │     `dd` - Perform a :Gdiff                               │
+" └─────────────┴───────────────────────────────────────────────────────────┘
+Plug 'tpope/vim-fugitive'
+
 
 " -- THEME -----------------------------------------------------------------------
 
