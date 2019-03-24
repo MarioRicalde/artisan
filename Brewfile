@@ -8,21 +8,32 @@ _='
 └──────────────────────────────────────────────────────────────────────────────┘
 '
 
+# -- GENERAL CONFIGURATION -----------------------------------------------------
+
 tap "caskroom/fonts"
 tap "getantibody/tap"
 tap "beeftornado/rmtree"
 tap "marioricalde/vim-with-flags"
+
+
+# -- GENERAL CONFIGURATION -----------------------------------------------------
+
+brew "zsh"
+brew "getantibody/tap/antibody"
+brew "coreutils"
 brew "fzf"
 brew "tree"
 brew "nnn"
-brew "zsh"
-brew "highlight"
 brew "the_silver_searcher"
 brew "peco"
 brew "lnav"
-brew "coreutils"
-brew "getantibody/tap/antibody"
 brew "marioricalde/vim-with-flags/vim-with-flags", args: ["with-client-server", "with-lua", "with-override-system-vi"], link: true
 cask "font-iosevka-nerd-font"
+
+
+# -- CASKS ---------------------------------------------------------------------
+
 cask "xquartz"
 cask "iterm2"
+
+
