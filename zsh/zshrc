@@ -34,14 +34,16 @@ if [[ -a ~/.zshrc_personal ]]; then
   . ~/.zshrc_personal
 fi
 
-# -- COMPLETION ----------------------------------------------------------------
-autoload -Uz compinit 
-compinit -C
-
 # -- ANTIBODY STATIC LOADING ---------------------------------------------------
 [ ! -f $ZSH/bodies.lock ] && bodies-bundle    # Generate if it doesn't exist
 . $ZSH/bodies.lock
 # . $ZSH/bundled-bodies.lock
+
+
+# -- COMPLETION ----------------------------------------------------------------
+autoload -Uz compinit 
+compinit -C;
+
 
 # -- ARTISAN SPECIFICS ---------------------------------------------------------
 for file in $ZSH/includes/*; do
