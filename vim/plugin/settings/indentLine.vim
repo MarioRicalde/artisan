@@ -9,8 +9,8 @@
 " -- GENERAL CONFIGURATION -------------------------------------------------------
 
 let g:indentLine_fileTypeExclude = ['startify', 'help']
-let g:indentLine_conceallevel=1
-let g:indentLine_setConceal=1
+let g:indentLine_concealcursor = ''
+let g:indentLine_conceallevel = 2
 
 " symbols used for different indentation levels.
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
