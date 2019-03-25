@@ -72,6 +72,24 @@ Plug 'tpope/vim-eunuch'
 " Signify - ➕ Show a diff using Vim its sign column.
 Plug 'mhinz/vim-signify'
 
+" vim-signature - show marks in the gutter.
+"
+" Usage:
+" ┌─────────────┬───────────────────────────────────────────────────────────┐
+" │ COMMAND     │                                                           │
+" ├─────────────┼───────────────────────────────────────────────────────────┤
+" │ mx          │  Toggle mark 'x' and display it in left column.           │
+" │ dmx         │  Remove mark 'x' where x is a-zA-Z                        │
+" │ m,          │  Place the next available mark.                           │
+" │ m-          │  Delete all marks from the current line                   │
+" │ m<Space>    │  Delete all marks in the current buffer.                  │
+" │ ]`          │  Jump to the next mark.                                   │
+" │ [`          │  Jump to the previous mark.                               │
+" │ m/          │  Open location list and display marks from current        │
+" │             │  buffer.                                                  │
+" └─────────────┴───────────────────────────────────────────────────────────┘
+Plug 'kshenoy/vim-signature'
+
 " Indent Guides
 "
 " Usage:
