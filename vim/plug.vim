@@ -147,7 +147,7 @@ Plug 'christoomey/vim-tmux-navigator'
 "
 " Usage:
 " ┌─────────────┬───────────────────────────────────────────────────────────┐
-" │ PREVIOUS    │                                                           │
+" │ COMMAND     │                                                           │
 " ├─────────────┼───────────────────────────────────────────────────────────┤
 " │ :Gblame     │  interactive `git blame` output.                          │
 " │ :Gmove      │  does git `git mv` and simultaneously rename buffer.      │
