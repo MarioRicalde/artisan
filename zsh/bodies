@@ -77,12 +77,6 @@ junegunn/fzf path:shell/key-bindings.zsh
 #    k -h  (for human readable file sizes)
 supercrabtree/k
 
-# tmux - Useful aliases and extra functionality.
-#
-# Usage:
-#    ta, tad, ts, tl, tksv
-robbyrussell/oh-my-zsh path:plugins/tmux
-
 # rsync - This plugin adds aliases for frequent rsync commands.
 #
 # Usage:
