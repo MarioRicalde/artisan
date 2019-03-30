@@ -16,6 +16,15 @@ then
   announce_and_execute "rm -rf $HOME/.vimrc"
   announce_and_execute "rm -rf $HOME/.zshrc"
   announce_and_execute "rm -rf ../vim/autoload/plug.vim"
+  announce_and_execute "rm -rf $HOME/.gitconfig"
+  announce_and_execute "rm -rf $HOME/.gitignore"
+
+  echo "Restoring gitconfig to pre-artisan."
+  if grep -q ARTISAN-MOVED $HOME/.gitconfig_personal; then 
+    [[ "$OSTYPE" == "darwin"* ]] && osx_flag="'' "
+    announce_and_execute "mv $HOME/.gitconfig_personal $HOME/.gitconfig"
+    announce_and_execute "sed -i ${osx_flag}'/ARTISAN-MOVED/d' $HOME/.gitconfig > /dev/null"
+  fi
 
   echo ""
   echo "Removing pre-artisan files..."
