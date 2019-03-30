@@ -39,12 +39,12 @@ done && separate
 # -- VIM.PLUG --------------------------------------------------------------------
 
 curl -fLo $artisan_path/vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null
 
 # -- POST CONFIG -----------------------------------------------------------------
 
 rm -rf $artisan_path/vim/plugged
-vim +PlugInstall +qall                              # Install Vim Plugins.
+vim +PlugInstall +qall > /dev/null                  # Install Vim Plugins.
 rm -rf $(antibody home)/**                          # Clean exisitng ZSH plugins.
 rm -rf $artisan_path/zsh/bodies.lock
 rm -rf $artisan_path/tmux/plugins
