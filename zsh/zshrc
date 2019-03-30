@@ -43,6 +43,7 @@ fi
 # -- COMPLETION ----------------------------------------------------------------
 autoload -Uz compinit 
 compinit -C;
+setopt completealiases
 
 
 # -- ARTISAN SPECIFICS ---------------------------------------------------------
