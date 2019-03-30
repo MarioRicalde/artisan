@@ -8,7 +8,7 @@ resolve_backup_directory() {
   backup_last_number=00$(( 10#$backup_last_dir + 1 )) # increment number (base 10), add leading zeros
   backup_dir=$backup_path/$backup_last_number
 
-  if [ "$arg_backup_name" != "false" ]; then 
+  if [ "$arg_backup_name" != "false" ]; then
     backup_path=$artisan_path/macos/backup/named
     backup_dir=$backup_path/$arg_backup_name
   fi
@@ -59,7 +59,7 @@ backup_and_write() {
 restore() {
   announce_module "ARTISAN BACKUP RESET"
 
-  if [ "$arg_backup_name" == "false" ]; then 
+  if [ "$arg_backup_name" == "false" ]; then
     if [ -d "$backup_path/000" ]; then
       announce "Restoring using the oldest backup (000)"
       backup_dir="$backup_path/000"

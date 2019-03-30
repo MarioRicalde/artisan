@@ -15,8 +15,8 @@ kill_all_apps() {
 
   announce "iTerm. Open. Restart. Open. This is the only way it loads the plist."
   sudo pkill -9 iTerm;
-  open /Applications/iTerm.app; 
-  sudo pkill -9 iTerm; 
+  open /Applications/iTerm.app;
+  sudo pkill -9 iTerm;
   open /Applications/iTerm.app;
   separate
 }

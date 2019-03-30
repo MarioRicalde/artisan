@@ -28,7 +28,7 @@
 ## @see http://stackoverflow.com/questions/13437104/compare-content-of-two-variables-in-bash
 ## @see http://stackoverflow.com/questions/4857310/how-to-get-diff-working-like-git-diff
 ##
-## Example: 
+## Example:
 ## @code
 ## ./plist-diff PATH/TO/a.plist PATH/TO/b.plist <ARGS>
 ## @endcode

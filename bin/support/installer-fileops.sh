@@ -17,7 +17,7 @@ mark_file() {
 }
 
 resolve_gitconfig() {
-  if [[ -f $h_path ]]; then 
+  if [[ -f $h_path ]]; then
     split && announce_file_contents $h_path
     read -p "Would you like to use this file as .gitconfig_personal (y/n)?  " -n 1 -r
     echo -e "\n" && resume

@@ -97,7 +97,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'Yggdroot/indentLine'
 
 " startify - the fancy start screen for vim
-" 
+"
 " Usage:
 "   :Startify
 "   Opening vim.
@@ -127,7 +127,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'sjl/gundo.vim'
 
 " nerdcommenter - comment functions
-" 
+"
 " Usage:
 "   <leader>cc - comment out current line or selected text
 "   <leader>cn - same as cc but forces nesting
@@ -137,7 +137,7 @@ Plug 'sjl/gundo.vim'
 Plug 'scrooloose/nerdcommenter'
 
 
-" Emmet - html abbreviations 
+" Emmet - html abbreviations
 "
 " Usage:
 "   div.something>ul.menu>li.item*3>a
