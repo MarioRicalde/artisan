@@ -33,3 +33,9 @@ announce_module() {
     echo " ├───────────────────────────────────────────────────────────────────"
   fi
 }
+
+announce_file_contents() {
+  echo -e "\n$1 contents:\n${RED}"
+  cat $1
+  echo -e "${RESET}"
+}

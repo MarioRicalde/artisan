@@ -35,7 +35,6 @@ for paths in "${ARTISAN_FILES[@]}"; do
     backup_and_symlink
   fi
 done && separate
-done
 
 # -- VIM.PLUG --------------------------------------------------------------------
 
