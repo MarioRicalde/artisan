@@ -208,6 +208,20 @@ Plug 'tpope/vim-fugitive'
 "   └──────────────────────────────────┴──────────────────────────────────┘
 Plug 'tpope/vim-unimpaired'
 
+" vim-lessmess - Remove white-space mess from files.
+"
+" Usage:
+" ┌───────────────────┬─────────────────────────────────────────────────────┐
+" │ COMMAND           │                                                     │
+" ├───────────────────┼─────────────────────────────────────────────────────┤
+" │ :LessmessForceEx  │ Trigger the cleanup.                                │
+" │            ecute  │                                                     │
+" │ :LessmessDisplay  │ Show highlighting for whitespaces.                  │
+" │           Toggle  │                                                     │
+" │ :LessmessToggle   │ Enable/Disable Lessmess.                            │
+" └───────────────────┴─────────────────────────────────────────────────────┘
+Plug 'mboughaba/vim-lessmess'
+
 " -- THEME -----------------------------------------------------------------------
 
 Plug 'joshdick/onedark.vim'
