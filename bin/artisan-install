@@ -18,6 +18,8 @@ declare -a ARTISAN_FILES=(
   "$artisan_path/vim/vimrc:$HOME/.vimrc"
   "$artisan_path/tmux/tmux.conf:$HOME/.tmux.conf"
   "$artisan_path/tmux:$HOME/.tmux"
+  "$artisan_path/git/gitconfig:$HOME/.gitconfig"
+  "$artisan_path/git/gitignore:$HOME/.gitignore"
 )
 
 for paths in "${ARTISAN_FILES[@]}"; do 
