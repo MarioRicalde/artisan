@@ -1,5 +1,10 @@
 #!/bin/bash
 
+bin_path="$( cd "$(dirname "$0")" ; pwd -P )"
+source "$bin_path/support/colors.sh"
+source "$bin_path/support/announcer.sh"
+source "$bin_path/support/installer-fileops.sh"
+
 # -- HOMEBREW --------------------------------------------------------------------
 
 brew bundle --file=../Brewfile
@@ -7,7 +12,6 @@ pip3 install --user pynvim # Requirement for deoplete
 
 # -- BACKUP & SYMLINK ------------------------------------------------------------
 
-bin_path="$( cd "$(dirname "$0")" ; pwd -P )"
 artisan_path="$bin_path/.."
 artisan_file_suffix=".pre-artisan.$(date +'%d-%m-%y.%H-%M-%S')"
 
@@ -22,14 +26,15 @@ declare -a ARTISAN_FILES=(
   "$artisan_path/git/gitignore:$HOME/.gitignore"
 )
 
+announce_module "Symlinking files"
 for paths in "${ARTISAN_FILES[@]}"; do 
   IFS=":"; path=($paths); a_path="${path[0]}"; h_path="${path[1]}";
-  command="mv -v $h_path $h_path$artisan_file_suffix 2> /dev/null"
-  echo "$command"
-  eval $command
-  command="ln -sf $a_path $h_path"
-  echo "$command"
-  eval $command
+  if [[ "$a_path" =~ gitconfig ]]; then
+    resolve_gitconfig
+  else
+    backup_and_symlink
+  fi
+done && separate
 done
 
 # -- VIM.PLUG --------------------------------------------------------------------
