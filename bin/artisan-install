@@ -54,8 +54,9 @@ do_command "$artisan_path/zsh/bundle-bodies"
 
 announce_module "tmux configuration"
 announce "Opening tmux in the background for tpm to download plugins."
-do_command "tmux new-session -d"
-do_command "tmux kill-server"
+do_command "tmux kill-server > /dev/null 2>&1"
+do_command "tmux new-session -d > /dev/null 2>&1"
+do_command "tmux kill-server > /dev/null 2>&1"
 separate
 
 
