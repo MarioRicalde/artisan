@@ -5,7 +5,7 @@ announcer_disabled=false
 
 announce() {
   if [ "$announcer_disabled" = false ]; then
-    echo -e " ├─> $1"
+    echo -e " ├─> $@"
   fi
 }
 
