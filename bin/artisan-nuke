@@ -4,7 +4,7 @@ announce_and_execute() {
   eval $1
 }
 
-read -p "FOR ARTISAN DEVELOPMENT ONLY, THIS WILL NUKE IT ALL! (y/n)" -n 1 -r
+read -p "Uninstall Artisan and everything it installed? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -25,10 +25,6 @@ then
     announce_and_execute "mv $HOME/.gitconfig_personal $HOME/.gitconfig"
     announce_and_execute "sed -i ${osx_flag}'/ARTISAN-MOVED/d' $HOME/.gitconfig > /dev/null"
   fi
-
-  echo ""
-  echo "Removing pre-artisan files..."
-  announce_and_execute "find $HOME -maxdepth 1 -name '*pre-artisan*' -delete"
 
   echo ""
   echo "Uninstalling isntalled brews..."

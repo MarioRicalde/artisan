@@ -1,0 +1,16 @@
+#!/bin/bash
+announce_and_execute() {
+  echo $1
+  eval $1
+}
+
+read -p "Do you wish to clean pre-artisan files in $HOME (y/n)" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  echo ""
+  echo "Removing pre-artisan files..."
+  announce_and_execute "find $HOME -maxdepth 1 -name '*pre-artisan*' -delete"
+  echo ""
+  echo "Done!"
+fi
