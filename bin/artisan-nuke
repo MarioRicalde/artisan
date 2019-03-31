@@ -18,6 +18,10 @@ then
   announce_and_execute "rm -rf ../vim/autoload/plug.vim"
   announce_and_execute "rm -rf $HOME/.gitconfig"
   announce_and_execute "rm -rf $HOME/.gitignore"
+  announce_and_execute "rm -rf $artisan_path/vim/plugged"
+  announce_and_execute "rm -rf $(antibody home)/**"
+  announce_and_execute "rm -rf $artisan_path/zsh/bodies.lock"
+  announce_and_execute "rm -rf $artisan_path/tmux/plugins"
 
   echo "Restoring gitconfig to pre-artisan."
   if grep -q ARTISAN-MOVED $HOME/.gitconfig_personal; then
