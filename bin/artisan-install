@@ -5,10 +5,14 @@ source "$bin_path/support/colors.sh"
 source "$bin_path/support/announcer.sh"
 source "$bin_path/support/installer-fileops.sh"
 
-# -- HOMEBREW --------------------------------------------------------------------
 
+# -- DEPENDENCIES ----------------------------------------------------------------
+
+announce_module "Homebrew"
+announce "Using brew bundle"
 brew bundle --file=../Brewfile
 pip3 install --user pynvim # Requirement for deoplete
+
 
 # -- BACKUP & SYMLINK ------------------------------------------------------------
 
@@ -27,6 +31,7 @@ declare -a ARTISAN_FILES=(
 )
 
 announce_module "Symlinking files"
+
 for paths in "${ARTISAN_FILES[@]}"; do
   IFS=":"; path=($paths); a_path="${path[0]}"; h_path="${path[1]}";
   if [[ "$a_path" =~ gitconfig ]]; then
@@ -34,18 +39,27 @@ for paths in "${ARTISAN_FILES[@]}"; do
   else
     backup_and_symlink
   fi
-done && separate
+done
 
-# -- VIM.PLUG --------------------------------------------------------------------
 
-curl -fLo $artisan_path/vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null
+# -- CORE CONFIGURATION ----------------------------------------------------------
+
+announce_module "vim.plug setup"
+do_command "curl -sfLo $artisan_path/vim/autoload/plug.vim --create-dirs https://git.io/VgrSsw > /dev/null"
+do_command "vim +PlugInstall +qall > /dev/null"
+
+announce_module "zsh configuration"
+announce "Running bundle-bodies..."
+do_command "$artisan_path/zsh/bundle-bodies"
+
+announce_module "tmux configuration"
+announce "Opening tmux in the background for tpm to download plugins."
+do_command "tmux new-session -d"
+do_command "tmux kill-server"
+separate
+
 
 # -- POST CONFIG -----------------------------------------------------------------
 
-vim +PlugInstall +qall > /dev/null                  # Install Vim Plugins.
 #scutil --set HostName                               # Set hostname without affecting
-                                                    # Bonjour.
-
-# -- APPLICATION CONFIGS ---------------------------------------------------------
-
+                                                     # Bonjour.
