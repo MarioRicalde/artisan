@@ -6,7 +6,7 @@ do_command() {
 }
 
 backup_and_symlink() {
-  do_command "mv -v $h_path $h_path$artisan_file_suffix > /dev/null"
+  [ -d $h_path ] && do_command "mv -v $h_path $h_path$artisan_file_suffix > /dev/null"
   do_command "ln -sf $a_path $h_path"
 }
 
