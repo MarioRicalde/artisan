@@ -46,7 +46,7 @@ done
 
 announce_module "vim.plug setup"
 do_command "curl -sfLo $artisan_path/vim/autoload/plug.vim --create-dirs https://git.io/VgrSsw > /dev/null"
-do_command "vim +PlugInstall +qall > /dev/null"
+do_command "vim +PlugInstall +qall > /dev/null 2>&1"
 
 announce_module "zsh configuration"
 announce "Running bundle-bodies..."

@@ -22,9 +22,9 @@ resolve_gitconfig() {
     read -p "Would you like to use this file as .gitconfig_personal (y/n)?  " -n 1 -r
     echo -e "\n" && resume
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-      do_command "mv -v $h_path $HOME/.gitconfig_personal"
+      do_command "mv -v $h_path $HOME/.gitconfig_personal > /dev/null"
       mark_file $HOME/.gitconfig_personal
-      do_command "ln -sf $a_path $h_path"
+      do_command "ln -sf $a_path $h_path > /dev/null"
     else
       backup_and_symlink
     fi
