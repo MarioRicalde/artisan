@@ -28,5 +28,7 @@ resolve_gitconfig() {
     else
       backup_and_symlink
     fi
+  else
+    backup_and_symlink
   fi
 }
