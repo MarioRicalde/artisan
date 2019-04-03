@@ -2,8 +2,9 @@
 
 bin_path="$( cd "$(dirname "$0")" ; pwd -P )"
 . "$bin_path/support/tmux-ban.sh"
-source "$bin_path/support/announcer.sh"
-source "$bin_path/support/installer-fileops.sh"
+. "$bin_path/support/colors.sh"
+. "$bin_path/support/announcer.sh"
+. "$bin_path/support/installer-fileops.sh"
 
 
 # -- DEPENDENCIES ----------------------------------------------------------------
