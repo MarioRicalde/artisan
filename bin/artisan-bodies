@@ -1,0 +1,34 @@
+#!/bin/bash
+
+bin_path="$( cd "$(dirname "$0")" ; pwd -P )"
+
+is_executed() {
+  if [[ "$(basename -- "$0")" == "artisan-bodies" ]]; then
+    return 0 # true
+  else
+    return 1 # false
+  fi
+}
+
+if (is_executed); then
+  . "$bin_path/support/colors.sh"
+  . "$bin_path/support/announcer.sh"
+  . "$bin_path/support/installer-fileops.sh"
+  announce_module "Antibody: Bundling bodies"
+fi
+
+if [[ -f ~/.bodies_personal ]]; then
+  announce "$HOME/.bodies_personal found! Adding it to $ZSH/bodies !"
+  do_command "cat $ZSH/bodies <(echo) $HOME/.bodies_personal > /tmp/artisanbodies"
+else
+  announce "Using $ZSH/bodies..."
+  do_command "cat $ZSH/bodies > /tmp/artisanbodies"
+fi
+
+announce "Storing generated file in $ZSH/bodies.lock"
+do_command "antibody bundle < /tmp/artisanbodies > $ZSH/bodies.lock"
+
+announce "Removing autocompletion cache..."
+do_command "rm $HOME/.zcompdump > /dev/null 2>&1"
+
+is_executed && separate

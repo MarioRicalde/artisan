@@ -49,8 +49,8 @@ do_command "curl -sfLo $artisan_path/vim/autoload/plug.vim --create-dirs https:/
 do_command "vim +PlugInstall +qall > /dev/null 2>&1"
 
 announce_module "zsh configuration"
-announce "Running bundle-bodies..."
-do_command "$artisan_path/zsh/bundle-bodies"
+announce "Running artisan-bodies..."
+do_command "source $bin_path/artisan-bodies"
 
 announce_module "tmux configuration"
 announce "Opening tmux in the background for tpm to download plugins."
