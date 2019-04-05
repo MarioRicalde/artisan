@@ -9,7 +9,7 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Removing symlinks..."
-  announce_and_execute "rm -rf $HOME/.artisan"
+  [[ $PWD/ = $HOME/.artisan/* ]] || announce_and_execute "rm -rf $HOME/.artisan"
   announce_and_execute "rm -rf $HOME/.tmux"
   announce_and_execute "rm -rf $HOME/.tmux.conf"
   announce_and_execute "rm -rf $HOME/.vim"

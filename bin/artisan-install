@@ -37,6 +37,8 @@ for paths in "${ARTISAN_FILES[@]}"; do
   IFS=":"; path=($paths); a_path="${path[0]}"; h_path="${path[1]}";
   if [[ "$a_path" =~ gitconfig ]]; then
     resolve_gitconfig
+  elif [[ $PWD/ = $HOME/.artisan/* ]]; then
+    announce "Using ~/.artisan as repo directory... not symlinking."
   else
     backup_and_symlink
   fi
